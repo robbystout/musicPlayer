@@ -1,0 +1,32 @@
+*{
+  box-sizing: border-box;
+  font-family: sans-serif;
+  margin: 0 auto;
+}
+
+body{
+  width:65%;
+}
+
+header{
+  background-color: black;
+  color: white;
+  height: 60px;
+  padding-top: 15px;
+}
+header h2{
+  text-align: center;
+}
+section{
+  padding-top:18px;
+  height: 60px;
+}
+section h2{
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.fa{
+  display: inline-block;
+  font-size:25px;
+}
