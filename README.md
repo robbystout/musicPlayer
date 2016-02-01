@@ -111,7 +111,8 @@ What do you think the difference is between `.getElementsByClassName` and `.getE
 ###4. Listening for Events
 
 Now that we have access to our elements lets add an Event Listener to them. We specifically want to add a `click` listener to our buttons. We will need a loop to make sure we hit all of our buttons. Your code should look something like this..
-```
+
+```javascript
 //"For Loop" => for iterating over all of our values in the buttons array
 
 //'target' => should be the element you want to add a listener to.
