@@ -14,6 +14,7 @@ To build your music player you will need/learn:
 - Classes (CSS)
 - Callback Functions
 - DOM - Document Object Model
+- Methods
 
 ##Music Player
 
@@ -132,5 +133,72 @@ for(var i = 0; i < 'target'.length; i++){
 ```
 Once you've got your listener wired up for all of your buttons open `index.html` in the browser. Click the buttons and make sure `I heard you click!` pops up in the browser for each one!
 
+**DISCUSS**
+What does the following code have to do with our eventListener
 
-5. Triggering Play/Pause/Stop and Dynamically Changing our display.
+```
+var button = el.target;
+var track = button.nextSibling;
+var title = track.nextElementSibling;
+```
+
+
+###5. Triggering Play/Pause/Stop and Dynamically Changing our display.
+
+You have been provided with 3 functions to assist in the creation of your player interface.
+
+1. `stopPlayback()` pauses all tracks, resets all buttons to the 'play' icon.
+2. `setSelection(title)` takes the title of our track in .
+3. `resetSelection()` resets the banner to its default 'Select a Song!' text.
+
+We also have several methods that are available to us to interact with our audio elements.
+
+1. `selectedTrack.play()` This method causes the targeted song to begin playing.
+2. `selectedTrack.pause()` This file causes the targeted song to pause. (**We will use pause to stop our track**)
+3. `selectedTrack.paused` Boolean value that lets us know if the track is currently paused or playing (paused = true => track isn't playing, paused = false => track is currently playing).
+
+We can use a combination of these functions, methods, and values, to create the functionality that we expect our Music Player to have.
+
+Let's use the following stories to guide our logic.
+
+
+```
+On page load no music should be playing.
+
+Banner should read "Select a Song!" when no music is playing.
+
+When user selects a song, the banner should change to the current song playing.
+
+When a song is not playing, it should have a 'play' icon.
+
+When a song is playing, it should have a 'stop' icon.
+
+When changing a song, the song last being played should be paused at it's current time.
+
+When stopping a song, it should hold the time it was stopped at.
+
+When a song finishes playing it should reset itself to the beginning of the track.
+
+```
+
+**Discuss in your group potential ways to structure our functions and methods to achieve the behavior above**
+
+We can use our function and methods as follows
+
+```
+if(track.paused === true){
+  stopPlayback();
+  track.play();
+  setSelection(title);
+  button.className = "fa fa-stop";
+}else if(track.paused === false){
+  stopPlayback();
+  resetSelection();
+  button.className = "fa fa-play";
+}
+```
+place the above code inside your event listener. Be sure to remove the `alert("I heard your click!")` since we will not be needing it anymore.
+
+Now the moment of truth. Open your HTML page and give your Music Player a whirl.
+
+**REVIEW AND QUESTIONS**
