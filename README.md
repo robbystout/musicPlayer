@@ -23,8 +23,8 @@ We want to write a program that will allow us to play our selected songs on the 
 2. Attach our music to our page using HTML5 [Audio API](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio).
 3. Linking the DOM with our Javascript
 4. Listen for click events triggered by the User
-5. Trigger play/pause/stop features of our audio
-6. Manipulate the DOM to have our HTML change dynamically with our events
+5. Trigger play/pause/stop features of our audio and Manipulate the DOM to dynamically display song titles.
+
 
 ###1. Setting up our HTML.
 
@@ -99,8 +99,8 @@ Add the following code to your JS
 ```
 var currentSelection = document.getElementById("currentSelection"); //gives us access to our Banner Element
 var tracks = document.getElementsByClassName("track"); //returns all of the elements with the className of "Track"
-var songTitle = document.getElementsByClassName("songTitle"); "Returns all of the elements with the name of SongTitle"
-var buttons = document.getElementsByTagName("i"); "Returns all of the <i> element in the HTML"
+var songTitle = document.getElementsByClassName("songTitle"); //"Returns all of the elements with the name of SongTitle"
+var buttons = document.getElementsByTagName("i"); //"Returns all of the <i> element in the HTML"
 
 ```
 
@@ -108,3 +108,29 @@ var buttons = document.getElementsByTagName("i"); "Returns all of the <i> elemen
 What do you think the difference is between `.getElementsByClassName` and `.getElementsByTagName` and `.getElementById`?
 
 ###4. Listening for Events
+
+Now that we have access to our elements lets add an Event Listener to them. We specifically want to add a `click` listener to our buttons. We will need a loop to make sure we hit all of our buttons. Your code should look something like this..
+```
+//"For Loop" => for iterating over all of our values in the buttons array
+
+//'target' => should be the element you want to add a listener to.
+
+//'event' => should be the specific event you're listening for.
+
+for(var i = 0; i < 'target'.length; i++){
+  target[i].addEventListener('event',function(el){
+      //var button = el.target;
+      //var track = button.nextSibling;
+      //var title = track.nextElementSibling;
+
+      alert("I heard your click!")
+      //More Code Here Later
+
+    })
+}
+
+```
+Once you've got your listener wired up for all of your buttons open `index.html` in the browser. Click the buttons and make sure `I heard you click!` pops up in the browser for each one!
+
+
+5. Triggering Play/Pause/Stop and Dynamically Changing our display.
