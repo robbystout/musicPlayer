@@ -31,7 +31,7 @@ We want to write a program that will allow us to play our selected songs on the 
 
 You have been provided with a skeleton of the HTML required to create your page. Go through and fill out each section with the corresponding song information.
 
-```
+```html
 <section>
   <i id="firstButton" class="fa fa-play"></i>
 
@@ -65,7 +65,7 @@ What behavior did you notice when interacting with the `audio` element?
 
 Let's move back to `index.html` and add our music to the page.
 
-```
+```javascript
 <audio src="songs/Bis_Co.mp3" class="track"></audio>
 ```
 
@@ -78,7 +78,8 @@ Every element on our HTML page is part of what is known as the DOM (Document Obj
 First things first, targeting our DOM Elements in Javascript
 
 The Target element we want to interact with in the HTML.
-```
+
+```html
 <section>
   <i id="firstButton" class="fa fa-play"></i>
   <audio src="songs/Bis_Co.mp3" class="track"></audio>
@@ -88,7 +89,8 @@ The Target element we want to interact with in the HTML.
 ```
 
 Storing the element to a variable for later usage in the Javascript.
-```
+
+```javascript
 var track = document.getElementsByTagName("audio")
 ```
 **Question**
@@ -97,7 +99,8 @@ What does `document.getElementsByTagName` mean, and why is it plural?
 You will notice that we have multiple elements on the DOM that we need to work with. Rather than selecting them all individually let's access all of them in groups.
 
 Add the following code to your JS
-```
+
+```javascript
 var currentSelection = document.getElementById("currentSelection"); //gives us access to our Banner Element
 var tracks = document.getElementsByClassName("track"); //returns all of the elements with the className of "Track"
 var songTitle = document.getElementsByClassName("songTitle"); //"Returns all of the elements with the name of SongTitle"
@@ -137,7 +140,7 @@ Once you've got your listener wired up for all of your buttons open `index.html`
 **DISCUSS**
 What does the following code have to do with our eventListener
 
-```
+```javascript
 var button = el.target;
 var track = button.nextSibling;
 var title = track.nextElementSibling;
@@ -186,7 +189,7 @@ When a song finishes playing it should reset itself to the beginning of the trac
 
 We can use our function and methods as follows
 
-```
+```javascript
 if(track.paused === true){
   stopPlayback();
   track.play();
