@@ -21,4 +21,4 @@ var resetSelection = function(){
   currentSelection.innerHTML = "Select a Song!";
 };
 
-//You should add your Event Listner and Buttons Here.
+//You should add your Event Listener and Buttons Here.
